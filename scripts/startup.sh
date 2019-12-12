@@ -15,12 +15,13 @@ sleep 30
 
 echo "Connecting to devices."
 for device in ${DEVICES[@]}; do
-   adb connect $device
+   adb connect "$device"
 done
 echo "Done."
 
 while true; do
   for device in ${DEVICES[@]}; do
-    adb connect $device > /dev/null 2>&1
+    adb connect "$device" > /dev/null 2>&1
   done
   sleep 60
+done
